@@ -1,4 +1,4 @@
-# 🌐 Ağ Yönetimi, Güvenliği ve Paket Analizi
+# 🌐 Ağ Yönetimi ve Güvenliği
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Turkish](https://img.shields.io/badge/Language-Turkish-red.svg)](#)
@@ -101,7 +101,7 @@ Bu proje **Creative Commons Attribution 4.0 International (CC BY 4.0)** lisansı
 * 📝 **Tek Koşul:** Orijinal esere atıfta bulunulması gerekmektedir.
 
 ```text
-"Ağ Yönetimi, Güvenliği ve Paket Analizi" by Yusuf Talha ARABACI 
+"Ağ Yönetimi ve Güvenliği" by Yusuf Talha ARABACI 
 is licensed under CC BY 4.0
 Kaynak: https://github.com/yusufarbc/ag-yonetimi-ve-guvenligi
 ```

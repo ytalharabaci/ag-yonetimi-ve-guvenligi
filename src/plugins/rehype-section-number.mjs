@@ -6,7 +6,8 @@ const SECTION_NUMBER = /^(§\d+(?:\.\d+)*\.)\s*/;
  * Chapter headings are written as "## §6.1.2. Title text". Splits the
  * "§6.1.2." prefix out of the heading's first text node into its own
  * <span class="chapter-num">, so it can be styled small and muted
- * instead of rendering at the same size/weight as the rest of the title.
+ * (networksciencebook.com's "Section 1.4" kicker label) instead of
+ * rendering at the same size/weight as the rest of the title.
  */
 export default function rehypeSectionNumber() {
 	return (tree) => {
@@ -30,4 +31,3 @@ export default function rehypeSectionNumber() {
 		});
 	};
 }
-

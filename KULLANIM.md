@@ -1,6 +1,6 @@
 # 🚀 Kullanım Kılavuzu (Astro & Starlight)
 
-Bu proje, modern bir dokümantasyon altyapısı olan **Astro 7 & Starlight 0.42** üzerine inşa edilmiştir. Ağ Yönetimi, Güvenliği ve Paket Analizi kitabının yazım sürecini kolaylaştırmak ve içeriği web üzerinden erişilebilir kılmak için aşağıdaki yönergeleri takip edebilirsiniz.
+Bu proje, modern bir dokümantasyon altyapısı olan **Astro 7 & Starlight 0.42** üzerine inşa edilmiştir. Ağ Yönetimi ve Güvenliği kitabının yazım sürecini kolaylaştırmak ve içeriği web üzerinden erişilebilir kılmak için aşağıdaki yönergeleri takip edebilirsiniz.
 
 ---
 

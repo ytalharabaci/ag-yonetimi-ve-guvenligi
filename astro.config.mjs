@@ -15,7 +15,7 @@ export default defineConfig({
 			autoTheme: true,
 		}),
 		starlight({
-			title: 'Ağ Yönetimi, Güvenliği ve Paket Analizi',
+			title: 'Ağ Yönetimi ve Güvenliği',
 			defaultLocale: 'root',
 			locales: {
 				root: {

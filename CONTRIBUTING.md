@@ -1,6 +1,6 @@
 # 🤝 Katkıda Bulunma Rehberi
 
-Bu projeye katkıda bulunmak istediğiniz için teşekkür ederiz! **Ağ Yönetimi, Güvenliği ve Paket Analizi** web kitabı, tamamen açık kaynaklı bir topluluk projesidir. Türkiye'deki Türkçe teknik ağ mühendisliği ve derin paket analizi (DFIR) kaynak açığını kapatmak amacıyla geliştirilen bu başucu kaynağını hep birlikte daha da ileriye taşıyabiliriz.
+Bu projeye katkıda bulunmak istediğiniz için teşekkür ederiz! **Ağ Yönetimi ve Güvenliği** web kitabı, tamamen açık kaynaklı bir topluluk projesidir. Türkiye'deki Türkçe teknik ağ mühendisliği ve derin paket analizi (DFIR) kaynak açığını kapatmak amacıyla geliştirilen bu başucu kaynağını hep birlikte daha da ileriye taşıyabiliriz.
 
 Aşağıda, projeye nasıl katkı sağlayabileceğinize dair adım adım yönergeler yer almaktadır.
 
