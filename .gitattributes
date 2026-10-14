@@ -1,0 +1,3 @@
+# GitHub Linguist and text attribute overrides
+* text=auto eol=lf
+src/content/docs/** linguist-language=Markdown
