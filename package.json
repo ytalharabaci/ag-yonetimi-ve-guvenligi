@@ -1,6 +1,7 @@
 {
   "name": "ag-yonetimi-ve-guvenligi",
   "version": "1.0.0",
+  "license": "CC-BY-4.0",
   "type": "module",
   "scripts": {
     "dev": "astro dev",

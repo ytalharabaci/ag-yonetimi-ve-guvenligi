@@ -33,6 +33,9 @@ export default defineConfig({
 			editLink: {
 				baseUrl: 'https://github.com/yusufarbc/ag-yonetimi-ve-guvenligi/edit/main/',
 			},
+			components: {
+				Footer: './src/components/Footer.astro',
+			},
 			customCss: [
 				'./src/styles/tokens.css',
 				'./src/styles/typography.css',
