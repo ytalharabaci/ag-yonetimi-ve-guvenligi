@@ -33,9 +33,9 @@ flowchart TD
     Cust --- CSP
 ```
 
-> [!IMPORTANT]
-> Bulut sağlayıcısı fiziksel altyapıyı korurken; sanal ağınızın mimarisinden, portların açık kalmasından ve firewall kurallarından **tamamen kurumun kendisi sorumludur**.
-
+:::caution
+Bulut sağlayıcısı fiziksel altyapıyı korurken; sanal ağınızın mimarisinden, portların açık kalmasından ve firewall kurallarından **tamamen kurumun kendisi sorumludur**.
+:::
 ---
 
 ## §11.1.2. Sanallaştırma ve Sanal Anahtar (vSwitch) Mekaniği

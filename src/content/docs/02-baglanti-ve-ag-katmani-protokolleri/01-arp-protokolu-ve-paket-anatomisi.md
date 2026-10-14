@@ -22,8 +22,9 @@ flowchart LR
     A -->|1. ARP Request: Who has 192.168.1.20?| SW
     SW -->|Broadcast FF:FF:FF:FF:FF:FF| B
     SW -->|Broadcast FF:FF:FF:FF:FF:FF| C
-    B -->|2. ARP Reply: 192.168.1.20 is at 00:11:22:33:44:55 (Unicast)| SW
+    B -->|"2. ARP Reply: 192.168.1.20 is at 00:11:22:33:44:55 (Unicast)"| SW
     SW -->|Unicast| A
+
 ```
 
 ---
@@ -34,9 +35,9 @@ ARP, yerel bir ağdaki bir IP adresinin hangi donanım (MAC) adresine ait olduğ
 
 ![ARP Protokolü ve Katman Eşleştirmesi](./1_H46AliIQi_SWSWD9GTZ5nw.webp)
 
-> [!IMPORTANT]
-> **Altın Kural:** ARP protokolü yalnızca yerel ağda (Broadcast Domain) çalışır! ARP paketleri Katman 3 yönlendiriciler (Router) tarafından başka ağlara yönlendirilmez (*non-routable*). Dolayısıyla ARP trafiğini Wireshark ile yakalayabilmek için analistin doğrudan o yerel ağ segmentine bağlı olması veya switch üzerinde SPAN/Mirroring portuna bağlanması gerekir.
-
+:::caution[Altın Kural]
+ARP protokolü yalnızca yerel ağda (Broadcast Domain) çalışır! ARP paketleri Katman 3 yönlendiriciler (Router) tarafından başka ağlara yönlendirilmez (*non-routable*). Dolayısıyla ARP trafiğini Wireshark ile yakalayabilmek için analistin doğrudan o yerel ağ segmentine bağlı olması veya switch üzerinde SPAN/Mirroring portuna bağlanması gerekir.
+:::
 ![ARP, MAC ve IP Katmanları Arasında Adres Çözümlemesi Sunar](./1_3BrM69K5ZUI6UjmzxvaKVg.webp)
 
 ---
@@ -126,5 +127,6 @@ Ağ analizinde ve olay müdahale operasyonlarında ARP trafiğini filtrelemek i�
 | `arp.src.hw_mac == 00:11:22:33:44:55` | Belirli bir fiziksel cihazın ürettiği tüm ARP'ler |
 | `arp.dst.proto_ipv4 == 192.168.1.1` | Ağ geçidi için gönderilen tüm ARP sorguları |
 
-> [!TIP]
-> Ağda aşırı sayıda `arp.opcode == 1` paketi görüyor ancak yanıt göremiyorsanız, ağda aktif bir IP taraması (Host Discovery / Nmap ARP scan) yapılıyor olabilir.
+:::tip
+Ağda aşırı sayıda `arp.opcode == 1` paketi görüyor ancak yanıt göremiyorsanız, ağda aktif bir IP taraması (Host Discovery / Nmap ARP scan) yapılıyor olabilir.
+:::

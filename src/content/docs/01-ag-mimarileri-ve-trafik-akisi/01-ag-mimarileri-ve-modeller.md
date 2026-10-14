@@ -50,9 +50,9 @@ Bilgisayar ağları, kapsadıkları coğrafi alana ve sundukları hizmet ölçe�
 | **MAN** *(Metropolitan Area Network)* | Şehir veya geniş yerleşke | Metro Ethernet, Kiralık Fiber | Şubeler ve kampüsler arası güvenli omurga bağlantısı |
 | **WAN** *(Wide Area Network)* | Ülkeler, kıtalar arası | MPLS, IPsec VPN, SD-WAN, BGP | İnternet omurgası, coğrafi yedeklilik, şifrelenmiş tüneller |
 
-> [!NOTE]
-> Ağ türü genişledikçe fiziksel denetim azalır ve mantıksal şifreleme (IPsec, MACsec, TLS) gereksinimi katlanarak artar. LAN seviyesinde fiziksel port güvenliği ve 802.1X öne çıkarken, WAN seviyesinde uçtan uca kriptografik tünelleme zorunludur.
-
+:::note
+Ağ türü genişledikçe fiziksel denetim azalır ve mantıksal şifreleme (IPsec, MACsec, TLS) gereksinimi katlanarak artar. LAN seviyesinde fiziksel port güvenliği ve 802.1X öne çıkarken, WAN seviyesinde uçtan uca kriptografik tünelleme zorunludur.
+:::
 ---
 
 ## §1.1.2. Fiziksel Altyapı ve Kablolama Standartları
@@ -270,5 +270,6 @@ Ağ mimarilerinin birlikte çalışabilirliğini sağlamak için standartlaşmı
 4. **Veri Bağlantı Katmanı:** Pakete kaynak ve hedef MAC adresleri ile hata kontrolü için FCS (Frame Check Sequence) eklenir. **PDU Adı: Çerçeve (Frame).**
 5. **Fiziksel Katman:** Çerçeve, bakır kabloda voltaj, fiberde ışık, kablosuzda RF sinyali olarak bitlere (0 ve 1) çevrilir. **PDU Adı: Bit.**
 
-> [!IMPORTANT]
-> Alıcı tarafta bu sürecin tam tersi olan **De-kapsülleme (De-encapsulation)** gerçekleşir. Ağ arayüz kartı (NIC) MAC adresinin kendisine ait olduğunu teyit edip çerçeve başlığını soyar, IP katmanı hedef IP'yi doğrulayıp IP başlığını soyar ve taşıma katmanı port numarasına göre veriyi ilgili sokete teslim eder.
+:::caution
+Alıcı tarafta bu sürecin tam tersi olan **De-kapsülleme (De-encapsulation)** gerçekleşir. Ağ arayüz kartı (NIC) MAC adresinin kendisine ait olduğunu teyit edip çerçeve başlığını soyar, IP katmanı hedef IP'yi doğrulayıp IP başlığını soyar ve taşıma katmanı port numarasına göre veriyi ilgili sokete teslim eder.
+:::

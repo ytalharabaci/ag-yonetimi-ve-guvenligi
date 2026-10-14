@@ -97,9 +97,9 @@ TCP bağlantısı kurulurken iki uç nokta birbirlerinin sıra numaralarını ş
 
 ![Sıra ve Onay Numaralarının Değiştirilen Veriyi Takibi](./1_bga1HCi_98qMzffpg5tHag.webp)
 
-> [!NOTE]
-> Wireshark, analiz kolaylığı sağlamak için paket inceleme ekranında 32-bitlik devasa gerçek ISN numaraları yerine varsayılan olarak **Relative Sequence Number (Göreceli Sıra Numarası)** kullanır; ilk SYN paketini `Seq = 0` olarak gösterir.
-
+:::note
+Wireshark, analiz kolaylığı sağlamak için paket inceleme ekranında 32-bitlik devasa gerçek ISN numaraları yerine varsayılan olarak **Relative Sequence Number (Göreceli Sıra Numarası)** kullanır; ilk SYN paketini `Seq = 0` olarak gösterir.
+:::
 ---
 
 ## §3.1.4. Oturum Kapatma ve Bağlantı Durumları

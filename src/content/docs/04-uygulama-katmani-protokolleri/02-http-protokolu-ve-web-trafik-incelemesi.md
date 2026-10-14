@@ -91,9 +91,9 @@ Web sunucusu arka plan programı (backend daemon) çöktüğünde veya aşırı 
 
 ![Değişken Boyutlu HTTP Paketlerinin İletim Süreci](./1_AU90ZRoS-ZXyas8DmkoIaQ.webp)
 
-> [!TIP]
-> Web sunucu gecikmelerini analiz ederken Wireshark'ta **Time** sütununu **Seconds Since Previous Displayed Packet** (Önceki paketten bu yana geçen saniye) olarak ayarlamak, sunucunun HTTP yanıtını üretirken ne kadar süre düşündüğünü (Server Processing Time) doğrudan ortaya çıkarır.
-
+:::tip
+Web sunucu gecikmelerini analiz ederken Wireshark'ta **Time** sütununu **Seconds Since Previous Displayed Packet** (Önceki paketten bu yana geçen saniye) olarak ayarlamak, sunucunun HTTP yanıtını üretirken ne kadar süre düşündüğünü (Server Processing Time) doğrudan ortaya çıkarır.
+:::
 ---
 
 ## §4.2.5. Web Uygulama Güvenliği: XSS Savunması ve HTTP Güvenlik Başlıkları

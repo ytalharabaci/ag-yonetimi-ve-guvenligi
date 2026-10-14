@@ -207,5 +207,6 @@ Wireshark'ta binlerce paket arasından kritik bilgiyi çekmek için ekran filtre
 | `http.request.method == "POST"` | Yalnızca HTTP POST istekleri |
 | `frame contains "USER"` | Paket yükünde (payload) "USER" ifadesi geçenler |
 
-> [!TIP]
-> Paket analizi yaparken şüpheli bir oturumu incelemenin en hızlı yolu `tcp.stream eq X` filtresidir. İlgili akışa sağ tıklayıp "Follow $\rightarrow$ TCP Stream" seçildiğinde bu filtre otomatik uygulanır.
+:::tip
+Paket analizi yaparken şüpheli bir oturumu incelemenin en hızlı yolu `tcp.stream eq X` filtresidir. İlgili akışa sağ tıklayıp "Follow $\rightarrow$ TCP Stream" seçildiğinde bu filtre otomatik uygulanır.
+:::

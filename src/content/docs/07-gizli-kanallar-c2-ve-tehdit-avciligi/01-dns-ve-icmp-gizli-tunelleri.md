@@ -57,10 +57,11 @@ ICMP Echo Request (Ping) mesajları, ağ tanılaması için içinde küçük bir
 
 ```mermaid
 flowchart LR
-    A["Kurban PC (Zararlı Yazılım)"] -->|ICMP Echo Request (Payload: Şifreli SSH/TCP Verisi)| FW["Güvenlik Duvarı (ICMP İzinli)"]
+    A["Kurban PC (Zararlı Yazılım)"] -->|"ICMP Echo Request (Payload: Şifreli SSH/TCP Verisi)"| FW["Güvenlik Duvarı (ICMP İzinli)"]
     FW -->|ICMP Paketi Geçer| C2["Saldırgan C2 Sunucusu"]
-    C2 -->|ICMP Echo Reply (Payload: Komut Yanıtı)| FW
+    C2 -->|"ICMP Echo Reply (Payload: Komut Yanıtı)"| FW
     FW -->|İçeri Alır| A
+
 ```
 
 ### Standart Ping ile ICMP Tünel Arasındaki Farklar:

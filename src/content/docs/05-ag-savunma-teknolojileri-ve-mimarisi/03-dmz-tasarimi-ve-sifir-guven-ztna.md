@@ -51,9 +51,9 @@ Bir DMZ mimarisinde yatay hareketi (lateral movement) engellemek için şu kural
 | **İç Ağ $\rightarrow$ DMZ** | Kısıtlı İZİN | SSH (Port 22), RDP (Port 3389) | Yalnızca yönetim iş istasyonlarından yönetimsel erişim. |
 | **DMZ $\rightarrow$ İnternet** | Kısıtlı DENY | Yalnızca belirli NTP ve OS güncelleme IP'leri | DMZ sunucusunun C2 sunucularına çıkması engellenir. |
 
-> [!CAUTION]
-> **DMZ'nin Altın Kuralı:** Bir DMZ sunucusunun iç ağa doğru yeni bir bağlantı oturumu (TCP SYN) başlatmasına ASLA izin verilmemelidir. Bağlantı daima iç ağdan DMZ'ye doğru başlatılmalıdır.
-
+:::caution[DMZ'nin Altın Kuralı]
+Bir DMZ sunucusunun iç ağa doğru yeni bir bağlantı oturumu (TCP SYN) başlatmasına ASLA izin verilmemelidir. Bağlantı daima iç ağdan DMZ'ye doğru başlatılmalıdır.
+:::
 ---
 
 ## §5.3.3. Sıfır Güven (Zero Trust), ZTNA ve SASE Mimarisi

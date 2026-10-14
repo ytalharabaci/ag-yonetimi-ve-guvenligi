@@ -71,9 +71,9 @@ Kurumsal Wi-Fi ağlarında **IEEE 802.1X Port Tabanlı Ağ Erişim Denetimi** ve
 2. **Authenticator (Erişim Noktası - AP / WLC):** İstemci kimliğini doğrulamadan önce ağ trafiğini tamamen bloke eder; yalnızca EAP paketlerini RADIUS sunucusuna iletir.
 3. **Authentication Server (RADIUS):** İstemcinin kurumsal dijital sertifikasını (EAP-TLS) veya kullanıcı bilgilerini Active Directory üzerinden doğrular.
 
-> [!IMPORTANT]
-> **EAP-TLS**, kurumsal kablosuz ağlar için altın standarttır. Hem istemci sunucunun sertifikasını hem de sunucu istemcinin sertifikasını karşılıklı doğrular (Mutual Authentication). Parola kullanılmadığı için kimlik avı (phishing) saldırılarına karşı tam bağışıklık sağlar.
-
+:::caution
+**EAP-TLS**, kurumsal kablosuz ağlar için altın standarttır. Hem istemci sunucunun sertifikasını hem de sunucu istemcinin sertifikasını karşılıklı doğrular (Mutual Authentication). Parola kullanılmadığı için kimlik avı (phishing) saldırılarına karşı tam bağışıklık sağlar.
+:::
 ---
 
 ## §5.4.5. Sahte Erişim Noktaları (Rogue AP ve Evil Twin)

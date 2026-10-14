@@ -131,9 +131,9 @@ E-posta protokolünde gönderici sunucu (MTA), alıcı sunucuya bağlanırken st
 4. `RCPT TO: <hedef@alici.com>`: Alıcı adresi belirtilir.
 5. `DATA`: Mesaj başlıkları ve gövdesi iletilir.
 
-> [!WARNING]
-> Klasik SMTP'de `MAIL FROM` alanında herhangi bir alan adı beyan edilebilir. Protokol düzeyinde hiçbir doğrulama olmadığı için saldırganlar kendilerini `ceo@sirketiniz.com` veya `destek@banka.com` olarak göstererek oltalama (Phishing / CEO Fraud) e-postaları gönderebilir.
-
+:::danger
+Klasik SMTP'de `MAIL FROM` alanında herhangi bir alan adı beyan edilebilir. Protokol düzeyinde hiçbir doğrulama olmadığı için saldırganlar kendilerini `ceo@sirketiniz.com` veya `destek@banka.com` olarak göstererek oltalama (Phishing / CEO Fraud) e-postaları gönderebilir.
+:::
 ---
 
 ## §4.4.6. E-Posta Kimlik Doğrulama Üçlüsü: SPF, DKIM ve DMARC

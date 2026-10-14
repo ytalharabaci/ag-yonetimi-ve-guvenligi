@@ -67,9 +67,9 @@ Bir paket yoldaki daha düşük MTU'ya sahip bir bağlantıya ulaştığında:
 
 ![Wireshark ile IP Parçalarının ve Offset Değerinin Yeniden Birleştirilmesi](./1_6Y7PXca_YiF7g2nbehV6oA.webp)
 
-> [!CAUTION]
-> Güvenlik duvarları ICMP Type 3 Code 4 paketlerini gereksiz yere engellerse, "PMTU Black Hole" oluşur. Web sayfaları küçük isteklerle açılırken büyük veri transferlerinde (örneğin dosya indirme veya TLS el sıkışmasında) bağlantı aniden kilitlenir.
-
+:::caution
+Güvenlik duvarları ICMP Type 3 Code 4 paketlerini gereksiz yere engellerse, "PMTU Black Hole" oluşur. Web sayfaları küçük isteklerle açılırken büyük veri transferlerinde (örneğin dosya indirme veya TLS el sıkışmasında) bağlantı aniden kilitlenir.
+:::
 ![Şüpheli Loopback ve Sahte Adres Trafiği](./1_fLWJpNDw-l0U1eNT73tlaQ.webp)
 
 ---
