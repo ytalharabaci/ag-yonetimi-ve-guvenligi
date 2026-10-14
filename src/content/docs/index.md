@@ -6,7 +6,7 @@ hero:
   title: Ağ Yönetimi ve Güvenliği
   tagline: Ağ altyapı mimarisinden derin paket incelemesine, saldırı tespitinden NetDevOps ve SOC/NOC operasyonlarına kadar kapsamlı teknik referans.
   image:
-    file: ./featured-nsm.webp
+    file: ../../assets/images/featured-nsm.webp
   actions:
     - text: Rehberi Keşfet
       link: 01-ag-mimarileri-ve-trafik-akisi/01-ag-mimarileri-ve-modeller/
