@@ -73,3 +73,4 @@ Bu komut, tüm sayfaların, görsel optimizasyonlarının ve arama indeksinin (P
 * **Kaynak Gösterme:** Kullanılan dış kaynaklar ve standartlar sayfa sonunda açıkça referans verilmelidir.
 
 Katkılarınız için şimdiden teşekkür ederiz!
+

@@ -71,3 +71,4 @@ description: "Alt bölümün özeti ve teknik kapsamı."
 npm run build
 ```
 Derleme çıktısı `dist/` klasörüne aktarılır ve GitHub Actions aracılığıyla GitHub Pages üzerinde otomatik olarak yayınlanır.
+
