@@ -30,14 +30,14 @@ flowchart TD
     Resolver["Özyinelemeli Çözümleyici (Recursive Resolver - ISP / 1.1.1.1)"]
     Client["İstemci (Tarayıcı)"]
 
-    Client -->|1. www.ornek.com nerede?| Resolver
-    Resolver -->|2. .com nerede?| Root
-    Root -->>|3. .com TLD IP'si| Resolver
-    Resolver -->|4. ornek.com nerede?| TLD_COM
-    TLD_COM -->>|5. ornek.com Yetkili Sunucu IP'si| Resolver
-    Resolver -->|6. www.ornek.com IP'si nedir?| AUTH
-    AUTH -->>|7. 93.184.216.34| Resolver
-    Resolver -->>|8. IP Adresi İstemciye Teslim Edilir| Client
+    Client -->|"1. www.ornek.com nerede?"| Resolver
+    Resolver -->|"2. .com nerede?"| Root
+    Root -.->|"3. .com TLD IP'si"| Resolver
+    Resolver -->|"4. ornek.com nerede?"| TLD_COM
+    TLD_COM -.->|"5. ornek.com Yetkili Sunucu IP'si"| Resolver
+    Resolver -->|"6. www.ornek.com IP'si nedir?"| AUTH
+    AUTH -.->|"7. 93.184.216.34"| Resolver
+    Resolver -.->|"8. IP Adresi İstemciye Teslim Edilir"| Client
 ```
 
 ### DNS Taşıma Protokolü: UDP 53 vs. TCP 53

@@ -4,6 +4,19 @@ import Default from '@astrojs/starlight/components/Footer.astro';
 
 <Default />
 
+<div class="companion-card">
+	<div class="companion-content">
+		<span class="companion-tag">Tamamlayıcı Kitap</span>
+		<h4 class="companion-title">Siber Güvenlik Operasyonları</h4>
+		<p class="companion-desc">
+			SOC ve SIEM log yönetimi, tehdit avcılığı (threat hunting), ITDR & Active Directory güvenliği, DevSecOps ve fidye yazılımı (ransomware) olay müdahale operasyonları.
+		</p>
+	</div>
+	<a href="https://yusufarbc.github.io/siber-guvenlik-operasyonlari/" class="companion-link" target="_blank" rel="noopener">
+		Kitabı İncele →
+	</a>
+</div>
+
 <p class="license">
 	© 2026 Yusuf Talha ARABACI. Bu eser
 	<a href="https://creativecommons.org/licenses/by/4.0/deed.tr" rel="license">CC BY 4.0</a>
@@ -11,6 +24,66 @@ import Default from '@astrojs/starlight/components/Footer.astro';
 </p>
 
 <style>
+	.companion-card {
+		margin-top: 2rem;
+		padding: 1.25rem 1.5rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.75rem;
+		background: var(--sl-color-gray-6);
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	}
+	@media (min-width: 48rem) {
+		.companion-card {
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+	.companion-card:hover {
+		border-color: var(--sl-color-accent);
+		box-shadow: 0 4px 16px rgba(var(--sl-color-accent-rgb), 0.1);
+	}
+	.companion-tag {
+		display: inline-block;
+		font-size: var(--sl-text-xs);
+		font-weight: 600;
+		color: var(--sl-color-accent);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-bottom: 0.25rem;
+	}
+	.companion-title {
+		margin: 0;
+		font-size: var(--sl-text-lg);
+		font-family: var(--sl-font-heading);
+		color: var(--sl-color-white);
+	}
+	.companion-desc {
+		margin: 0.25rem 0 0;
+		font-size: var(--sl-text-sm);
+		color: var(--sl-color-gray-2);
+		line-height: 1.4;
+	}
+	.companion-link {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.5rem 1.1rem;
+		font-size: var(--sl-text-sm);
+		font-weight: 600;
+		color: #ffffff !important;
+		background: var(--sl-color-accent);
+		border-radius: 0.5rem;
+		text-decoration: none;
+		white-space: nowrap;
+		transition: background 0.15s ease, transform 0.15s ease;
+	}
+	.companion-link:hover {
+		background: var(--sl-color-accent-high);
+		transform: translateY(-1px);
+	}
 	.license {
 		margin-top: 1.5rem;
 		padding-top: 1rem;

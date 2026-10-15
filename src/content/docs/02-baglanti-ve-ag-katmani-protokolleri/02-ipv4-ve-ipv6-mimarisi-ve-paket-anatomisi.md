@@ -132,3 +132,66 @@ Wireshark ekranında IP düzeyinde analiz yaparken şu filtreler en sık kullan�
 | `ipv6` | Saf veya tünellenmiş tüm IPv6 paketleri |
 | `udp.port == 3544` | Teredo IPv6 tünelleme trafiği |
 | `ip.proto == 41` | 6to4 IPv6 tünelleme trafiği |
+
+---
+
+## §2.2.6. Küresel Yönlendirme ve BGP Güvenliği: RPKI ve BGP Hijacking
+
+İnternet, on binlerce Otonom Sistem (Autonomous System - AS) arasında IP bloklarının anons edildiği **BGP (Border Gateway Protocol - RFC 4271)** ile birbirine bağlanır. BGP, 1980'lerde tasarlanırken "tüm operatörlerin güvenilir olduğu" varsayılmıştır; bu nedenle varsayılan olarak BGP anonslarında kriptografik bir doğrulama yoktur.
+
+### 1. BGP Hijacking ve Route Leakage
+Bir saldırgan veya hatalı yapılandırılmış bir operatör, kendisine ait olmayan bir IP bloğunu (örneğin Google'a ait `8.8.8.0/24`) kendi ASN'i üzerinden anons ederse:
+- BGP'nin en temel yönlendirme kuralı olan **En Uzun Eşleşen Prefix (Longest Prefix Match)** ilkesi devreye girer.
+- Orijinal sahip `8.8.0.0/16` anons ederken, saldırgan `8.8.8.0/24` anons ederse, dünya genelindeki yönlendiriciler trafiği daha spesifik olan saldırganın yoluna yönlendirir.
+- **Tarihi Vaka (2018 MyEtherWallet):** Saldırganlar Amazon Route 53'e ait IP bloklarını BGP üzerinden kaçırarak DNS trafiğini sahte sunuculara yönlendirmiş ve kullanıcıların kripto cüzdanlarını boşaltmıştır.
+
+```mermaid
+flowchart LR
+    Victim["Hedef Ağ (Örn: Banka)<br/>AS 12345 (Anons: 198.51.100.0/22)"]
+    Attacker["Kötü Niyetli / Hatalı AS<br/>AS 666 (Sahte Anons: 198.51.100.0/24)"]
+    Internet["Küresel İnternet Yönlendiricileri"]
+    Clients["Kullanıcılar"]
+
+    Clients --> Internet
+    Internet -->|"Daha Spesifik Prefix (/24)"| Attacker
+    Internet -.->|"Genel Prefix (/22) Bastırıldı"| Victim
+```
+
+### 2. RPKI (Resource Public Key Infrastructure) ve ROA Çözümü
+BGP anonslarını kriptografik olarak güvence altına almak için IETF tarafından **RPKI (RFC 6480)** standardı geliştirilmiştir:
+- Bölgesel İnternet Kayıt Kuruluşları (RIR - RIPE NCC, ARIN, APNIC), IP bloğunun yasal sahibine bir dijital sertifika verir.
+- IP sahibi, **ROA (Route Origin Authorization)** kaydı oluşturarak: *"198.51.100.0/24 bloğunu YALNIZCA AS 12345 anons edebilir, maksimum uzunluk /24'tür"* taahhüdünde bulunur.
+- İnternet servis sağlayıcılar RPKI doğrulayıcıları (Routinator, StayRTR) çalıştırarak gelen BGP anonslarını doğrular.
+
+### BGP Anonsunun RPKI Durumları:
+- **Valid (Geçerli):** Anons edilen ASN ve prefix, imzalı ROA kaydıyla tam eşleşir.
+- **Invalid (Geçersiz):** ROA kaydı mevcuttur ancak anons farklı bir ASN'den gelmektedir veya prefix boyutu aşılmıştır. Modern yönlendiriciler bu anonsları **otomatik olarak düşürür (Drop)**.
+- **NotFound (Bilinmiyor):** İlgili IP bloğu için henüz bir ROA kaydı oluşturulmamıştır.
+
+### Cisco IOS-XE üzerinde BGP RPKI Yapılandırması:
+```cisco
+! RPKI Doğrulayıcı Sunucu Bağlantısı (Routinator)
+router bgp 65001
+ bgp rpki server tcp 192.168.1.100 port 3323 refresh 300
+!
+! RPKI Invalid anonsları filtreleyen rota haritası
+route-map RPKI-FILTER permit 10
+ match rpki valid
+!
+route-map RPKI-FILTER permit 20
+ match rpki not-found
+!
+route-map RPKI-FILTER deny 30
+ match rpki invalid
+!
+router bgp 65001
+ neighbor 203.0.113.1 route-map RPKI-FILTER in
+```
+
+---
+
+## §2.2.7. Çapraz Referans ve Entegrasyon
+- ARP protokolü ve L2 paket anatomisi için [§2.1 ARP Protokolü ve Paket Anatomisi](./01-arp-protokolu-ve-paket-anatomisi.md) bölümüne bakın.
+- Ağ katmanı DoS saldırıları ve paket analizi için [§6.3 Ağ ve Uygulama Katmanı DoS Saldırıları](../06-ag-saldirilari-dos-ddos-ve-paket-tespiti/03-ag-ve-uygulama-katmani-dos-saldirilari.md) bölümüne bakın.
+- Siber Güvenlik Operasyonları Kitabı'nda gelişmiş ağ saldırıları için [Ağ Saldırıları ve Savunma](../../../siber-guvenlik-operasyonlari/06-ag-guvenligi/03-ag-saldirilari-ve-savunma.md) bölümünü inceleyin.
+

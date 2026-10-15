@@ -6,6 +6,11 @@ import rehypeSectionNumber from './src/plugins/rehype-section-number.mjs';
 export default defineConfig({
 	site: 'https://yusufarbc.github.io',
 	base: '/ag-yonetimi-ve-guvenligi',
+	compressHTML: true,
+	prefetch: {
+		prefetchAll: true,
+		defaultStrategy: 'hover',
+	},
 	markdown: {
 		rehypePlugins: [rehypeSectionNumber],
 	},
@@ -22,6 +27,10 @@ export default defineConfig({
 					label: 'Türkçe',
 					lang: 'tr',
 				},
+			},
+			tableOfContents: {
+				minHeadingLevel: 2,
+				maxHeadingLevel: 3,
 			},
 			social: [
 				{
@@ -44,6 +53,28 @@ export default defineConfig({
 			],
 			head: [
 				{
+					tag: 'link',
+					attrs: {
+						rel: 'preconnect',
+						href: 'https://fonts.googleapis.com',
+					},
+				},
+				{
+					tag: 'link',
+					attrs: {
+						rel: 'preconnect',
+						href: 'https://fonts.gstatic.com',
+						crossorigin: true,
+					},
+				},
+				{
+					tag: 'link',
+					attrs: {
+						rel: 'stylesheet',
+						href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Fira+Code:wght@400;500&display=swap',
+					},
+				},
+				{
 					tag: 'script',
 					content: `
 						(function () {
@@ -51,6 +82,7 @@ export default defineConfig({
 								var labels = document.querySelectorAll('.sidebar-content a > span:first-child');
 								for (var i = 0; i < labels.length; i++) {
 									var span = labels[i];
+									if (span.querySelector('.chapter-num')) continue;
 									var match = /^(\\d+\\.\\d+)\\s+(.+)$/.exec(span.textContent);
 									if (!match) continue;
 									span.textContent = '';
@@ -63,7 +95,7 @@ export default defineConfig({
 							}
 							function revealActiveSidebarLink() {
 								var active = document.querySelector('.sidebar-content [aria-current="page"]');
-								if (active) active.scrollIntoView({ block: 'center' });
+								if (active) active.scrollIntoView({ block: 'nearest', inline: 'nearest' });
 							}
 							function init() {
 								splitSidebarLabels();
@@ -74,11 +106,17 @@ export default defineConfig({
 							} else {
 								init();
 							}
+							document.addEventListener('astro:page-load', init);
 						})();
 					`,
 				},
 			],
 			sidebar: [
+				{
+					label: '🛡️ Siber Güvenlik Operasyonları Kitabı ↗',
+					link: 'https://yusufarbc.github.io/siber-guvenlik-operasyonlari/',
+					attrs: { target: '_blank', rel: 'noopener' },
+				},
 				{
 					label: '01. Ağ Mimarileri ve Trafik Akışı',
 					collapsed: true,

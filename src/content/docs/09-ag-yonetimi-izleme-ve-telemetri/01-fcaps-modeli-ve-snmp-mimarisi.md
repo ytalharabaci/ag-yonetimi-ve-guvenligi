@@ -40,14 +40,12 @@ Basit Ağ Yönetim Protokolü (SNMP - RFC 1157 / RFC 3411), bir ağ yöneticisin
 
 ```mermaid
 flowchart LR
-    NMS["NMS İzleme Sunucusu (Zabbix / PRTG / LibreNMS)"]
-    Router["Ağ Cihazı (SNMP Agent)"]
+    NMS["NMS İzleme Sunucusu<br/>(Zabbix / PRTG / LibreNMS)"]
+    Router["Ağ Cihazı<br/>(SNMP Agent)"]
 
     NMS -->|"1. Polling: GetRequest (OID: 1.3.6.1.2.1.1.3 - Uptime?)"| Router
-    Router -->>|2. Response: Uptime = 45 gün| NMS
-
-    Router -.->|3. Push: SNMP Trap (Port 1/0/1 Down oldu!)| NMS
-
+    Router -.->|"2. Response: Uptime = 45 gün"| NMS
+    Router ==>|"3. Push: SNMP Trap (Port 1/0/1 Down!)"| NMS
 ```
 
 ### Temel Bileşenler:

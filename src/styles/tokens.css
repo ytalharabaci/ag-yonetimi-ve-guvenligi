@@ -4,9 +4,6 @@
    Nothing here targets a specific component — that belongs in
    layout.css (chrome) or typography.css (text).
    =================================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Geist:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Fira+Code:wght@400;500&display=swap');
-
 :root {
 	--sl-font: 'Source Serif 4', serif;
 	--sl-font-mono: 'Fira Code', monospace;
