@@ -72,3 +72,13 @@ npm run build
 ```
 Derleme çıktısı `dist/` klasörüne aktarılır ve GitHub Actions aracılığıyla GitHub Pages üzerinde otomatik olarak yayınlanır.
 
+
+## ✏️ Tarayıcıdan Düzenleme (Pages CMS)
+Bölümler [Pages CMS](https://app.pagescms.org) ile tarayıcıdan da düzenlenebilir. Yapılandırma depo kökündeki `.pages.yml` dosyasındadır; her kayıt `main` dalına commit edilir ve GitHub Actions siteyi yeniden yayınlar.
+
+1. `app.pagescms.org` adresinde GitHub hesabıyla giriş yapın ve Pages CMS GitHub App'ini bu depoya kurun (yalnızca bu depoyu seçin).
+2. **Bölümler** koleksiyonunda klasörler bölümleri, dosyalar konuları gösterir. Gövde ham Markdown olarak düzenlenir; Mermaid, tablolar ve Starlight kutuları olduğu gibi kalır.
+3. Görselleri **Medya** bölümünde ilgili bölüm klasörüne yükleyin ve gövdede `./gorsel.webp` biçiminde kullanın.
+4. Yeni konuda dosya adını `NN-konu-adi.md` biçiminde verin ve `Sıra` / `Etiket` (ör. `1.5  Başlık`) alanlarını doldurun.
+
+> Pages CMS yalnızca `.pages.yml` içinde tanımlı frontmatter alanlarını yazar (`title`, `sidebar.order`, `sidebar.label`). Yeni bir frontmatter alanı eklenirse `.pages.yml` dosyasına da eklenmelidir. `index.md` ve `404.md` CMS dışında tutulur.
