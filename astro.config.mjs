@@ -1,10 +1,10 @@
-import { defineConfig } from 'astro/config';
+﻿import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import mermaid from 'astro-mermaid';
 import rehypeSectionNumber from './src/plugins/rehype-section-number.mjs';
 
 export default defineConfig({
-	site: 'https://yusufarbc.github.io',
+	site: 'https://ytalharabaci.github.io',
 	base: '/ag-yonetimi-ve-guvenligi',
 	compressHTML: true,
 	prefetch: {
@@ -114,12 +114,12 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: '🛡️ Siber Güvenlik Operasyonları Kitabı ↗',
-					link: 'https://yusufarbc.github.io/siber-guvenlik-operasyonlari/',
+					link: 'https://ytalharabaci.github.io/siber-guvenlik-operasyonlari/',
 					attrs: { target: '_blank', rel: 'noopener' },
 				},
 				{
 					label: '💻 İşletim Sistemleri ve Sistem Programlama Kitabı ↗',
-					link: 'https://yusufarbc.github.io/isletim-sistemleri-ve-sistem-programlama/',
+					link: 'https://ytalharabaci.github.io/isletim-sistemleri-ve-sistem-programlama/',
 					attrs: { target: '_blank', rel: 'noopener' },
 				},
 				{
