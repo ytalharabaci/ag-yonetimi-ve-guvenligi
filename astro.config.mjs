@@ -1,4 +1,4 @@
-﻿import { defineConfig } from 'astro/config';
+import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import mermaid from 'astro-mermaid';
 import rehypeSectionNumber from './src/plugins/rehype-section-number.mjs';
