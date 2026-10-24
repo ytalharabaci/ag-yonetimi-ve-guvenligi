@@ -118,11 +118,6 @@ export default defineConfig({
 					attrs: { target: '_blank', rel: 'noopener' },
 				},
 				{
-					label: '💻 İşletim Sistemleri ve Sistem Programlama Kitabı ↗',
-					link: 'https://ytalharabaci.github.io/isletim-sistemleri-ve-sistem-programlama/',
-					attrs: { target: '_blank', rel: 'noopener' },
-				},
-				{
 					label: '🔐 Uygulamalı Kriptoloji Kitabı ↗',
 					link: 'https://ytalharabaci.github.io/uygulamali-kriptoloji/',
 					attrs: { target: '_blank', rel: 'noopener' },
