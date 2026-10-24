@@ -118,6 +118,11 @@ export default defineConfig({
 					attrs: { target: '_blank', rel: 'noopener' },
 				},
 				{
+					label: '💻 İşletim Sistemleri ve Sistem Programlama Kitabı ↗',
+					link: 'https://yusufarbc.github.io/isletim-sistemleri-ve-sistem-programlama/',
+					attrs: { target: '_blank', rel: 'noopener' },
+				},
+				{
 					label: '01. Ağ Mimarileri ve Trafik Akışı',
 					collapsed: true,
 					items: [{ autogenerate: { directory: '01-ag-mimarileri-ve-trafik-akisi' } }],

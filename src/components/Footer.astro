@@ -4,17 +4,32 @@ import Default from '@astrojs/starlight/components/Footer.astro';
 
 <Default />
 
-<div class="companion-card">
-	<div class="companion-content">
-		<span class="companion-tag">Tamamlayıcı Kitap</span>
-		<h4 class="companion-title">Siber Güvenlik Operasyonları</h4>
-		<p class="companion-desc">
-			SOC ve SIEM log yönetimi, tehdit avcılığı (threat hunting), ITDR & Active Directory güvenliği, DevSecOps ve fidye yazılımı (ransomware) olay müdahale operasyonları.
-		</p>
+<div class="companion-grid">
+	<div class="companion-card">
+		<div class="companion-content">
+			<span class="companion-tag">Savunma Operasyonları Kitabı</span>
+			<h4 class="companion-title">Siber Güvenlik Operasyonları</h4>
+			<p class="companion-desc">
+				SOC ve SIEM log yönetimi, tehdit avcılığı (threat hunting), ITDR & Active Directory güvenliği, DevSecOps ve fidye yazılımı (ransomware) olay müdahale operasyonları.
+			</p>
+		</div>
+		<a href="https://yusufarbc.github.io/siber-guvenlik-operasyonlari/" class="companion-link" target="_blank" rel="noopener">
+			Kitabı İncele →
+		</a>
 	</div>
-	<a href="https://yusufarbc.github.io/siber-guvenlik-operasyonlari/" class="companion-link" target="_blank" rel="noopener">
-		Kitabı İncele →
-	</a>
+
+	<div class="companion-card">
+		<div class="companion-content">
+			<span class="companion-tag">Sistem ve Çekirdek Kitabı</span>
+			<h4 class="companion-title">İşletim Sistemleri ve Sistem Programlama</h4>
+			<p class="companion-desc">
+				x86 mikroişlemci mimarisi, C ve x86 Assembly ile donanım programlama, süreç ve bellek yönetimi (Paging/Virtual Memory) ve Windows sistem altyapısı.
+			</p>
+		</div>
+		<a href="https://yusufarbc.github.io/isletim-sistemleri-ve-sistem-programlama/" class="companion-link" target="_blank" rel="noopener">
+			Kitabı İncele →
+		</a>
+	</div>
 </div>
 
 <p class="license">
@@ -24,23 +39,27 @@ import Default from '@astrojs/starlight/components/Footer.astro';
 </p>
 
 <style>
-	.companion-card {
+	.companion-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.25rem;
 		margin-top: 2rem;
+	}
+	@media (min-width: 60rem) {
+		.companion-grid {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+	.companion-card {
 		padding: 1.25rem 1.5rem;
 		border: 1px solid var(--sl-color-gray-5);
 		border-radius: 0.75rem;
 		background: var(--sl-color-gray-6);
 		display: flex;
 		flex-direction: column;
+		justify-content: space-between;
 		gap: 1rem;
 		transition: border-color 0.2s ease, box-shadow 0.2s ease;
-	}
-	@media (min-width: 48rem) {
-		.companion-card {
-			flex-direction: row;
-			align-items: center;
-			justify-content: space-between;
-		}
 	}
 	.companion-card:hover {
 		border-color: var(--sl-color-accent);
@@ -70,6 +89,8 @@ import Default from '@astrojs/starlight/components/Footer.astro';
 	.companion-link {
 		display: inline-flex;
 		align-items: center;
+		justify-content: center;
+		align-self: flex-start;
 		padding: 0.5rem 1.1rem;
 		font-size: var(--sl-text-sm);
 		font-weight: 600;
