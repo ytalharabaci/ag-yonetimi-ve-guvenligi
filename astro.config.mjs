@@ -113,16 +113,6 @@ export default defineConfig({
 			],
 			sidebar: [
 				{
-					label: '🛡️ Siber Güvenlik Operasyonları Kitabı ↗',
-					link: 'https://ytalharabaci.github.io/siber-guvenlik-operasyonlari/',
-					attrs: { target: '_blank', rel: 'noopener' },
-				},
-				{
-					label: '🔐 Uygulamalı Kriptoloji Kitabı ↗',
-					link: 'https://ytalharabaci.github.io/uygulamali-kriptoloji/',
-					attrs: { target: '_blank', rel: 'noopener' },
-				},
-				{
 					label: '01. Ağ Mimarileri ve Trafik Akışı',
 					collapsed: true,
 					items: [{ autogenerate: { directory: '01-ag-mimarileri-ve-trafik-akisi' } }],

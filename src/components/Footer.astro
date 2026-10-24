@@ -2,34 +2,13 @@
 import Default from '@astrojs/starlight/components/Footer.astro';
 ---
 
-<Default />
+<Default><slot /></Default>
 
-<div class="companion-grid">
-	<div class="companion-card">
-		<div class="companion-content">
-			<span class="companion-tag">Savunma Operasyonları Kitabı</span>
-			<h4 class="companion-title">Siber Güvenlik Operasyonları</h4>
-			<p class="companion-desc">
-				SOC ve SIEM log yönetimi, tehdit avcılığı (threat hunting), ITDR & Active Directory güvenliği, DevSecOps ve fidye yazılımı (ransomware) olay müdahale operasyonları.
-			</p>
-		</div>
-		<a href="https://ytalharabaci.github.io/siber-guvenlik-operasyonlari/" class="companion-link" target="_blank" rel="noopener">
-			Kitabı İncele →
-		</a>
-	</div>
-
-	<div class="companion-card">
-		<div class="companion-content">
-			<span class="companion-tag">Şifreleme & Kriptanaliz Kitabı</span>
-			<h4 class="companion-title">Uygulamalı Kriptoloji</h4>
-			<p class="companion-desc">
-				Kriptografik temeller, AES/ChaCha20, RSA/ECC, TLS 1.3 el sıkışması, PQC (Kyber/Dilithium), ZKP ve blokzincir mutabakat matematiği.
-			</p>
-		</div>
-		<a href="https://ytalharabaci.github.io/uygulamali-kriptoloji/" class="companion-link" target="_blank" rel="noopener">
-			Kitabı İncele →
-		</a>
-	</div>
+<div class="companion-bar">
+	<span class="companion-label">Kardeş Web Kitapları:</span>
+	<a href="https://ytalharabaci.github.io/siber-guvenlik-operasyonlari/" class="companion-link" target="_blank" rel="noopener">🛡️ Siber Güvenlik Operasyonları</a>
+	<span class="companion-dot" aria-hidden="true">•</span>
+	<a href="https://ytalharabaci.github.io/uygulamali-kriptoloji/" class="companion-link" target="_blank" rel="noopener">🔐 Uygulamalı Kriptoloji</a>
 </div>
 
 <p class="license">
@@ -39,78 +18,43 @@ import Default from '@astrojs/starlight/components/Footer.astro';
 </p>
 
 <style>
-	.companion-grid {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 1.25rem;
-		margin-top: 2rem;
-	}
-	@media (min-width: 60rem) {
-		.companion-grid {
-			grid-template-columns: 1fr 1fr;
-		}
-	}
-	.companion-card {
-		padding: 1.25rem 1.5rem;
-		border: 1px solid var(--sl-color-gray-5);
-		border-radius: 0.75rem;
-		background: var(--sl-color-gray-6);
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		gap: 1rem;
-		transition: border-color 0.2s ease, box-shadow 0.2s ease;
-	}
-	.companion-card:hover {
-		border-color: var(--sl-color-accent);
-		box-shadow: 0 4px 16px rgba(var(--sl-color-accent-rgb), 0.1);
-	}
-	.companion-tag {
-		display: inline-block;
-		font-size: var(--sl-text-xs);
-		font-weight: 600;
-		color: var(--sl-color-accent);
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		margin-bottom: 0.25rem;
-	}
-	.companion-title {
-		margin: 0;
-		font-size: var(--sl-text-lg);
-		font-family: var(--sl-font-heading);
-		color: var(--sl-color-white);
-	}
-	.companion-desc {
-		margin: 0.25rem 0 0;
-		font-size: var(--sl-text-sm);
-		color: var(--sl-color-gray-2);
-		line-height: 1.4;
-	}
-	.companion-link {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		align-self: flex-start;
-		padding: 0.5rem 1.1rem;
-		font-size: var(--sl-text-sm);
-		font-weight: 600;
-		color: #ffffff !important;
-		background: var(--sl-color-accent);
-		border-radius: 0.5rem;
-		text-decoration: none;
-		white-space: nowrap;
-		transition: background 0.15s ease, transform 0.15s ease;
-	}
-	.companion-link:hover {
-		background: var(--sl-color-accent-high);
-		transform: translateY(-1px);
-	}
-	.license {
+	.companion-bar {
 		margin-top: 1.5rem;
 		padding-top: 1rem;
-		border-top: 1px solid var(--sl-color-gray-5);
-		font-size: var(--sl-text-xs);
-		color: var(--sl-color-gray-3);
+		border-top: 1px solid var(--sl-color-gray-6, rgba(255, 255, 255, 0.08));
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 0.75rem;
+		font-size: 0.85rem;
+		color: var(--sl-color-gray-3, #94a3b8);
+	}
+	.companion-label {
+		font-weight: 600;
+		color: var(--sl-color-gray-2, #cbd5e1);
+	}
+	.companion-link {
+		color: var(--sl-color-accent, #6366f1);
+		text-decoration: none;
+		transition: color 0.15s ease;
+	}
+	.companion-link:hover {
+		color: var(--sl-color-white, #fff);
+		text-decoration: underline;
+	}
+	.companion-dot {
+		opacity: 0.4;
+	}
+	.license {
+		margin-top: 1rem;
+		font-size: 0.8125rem;
+		color: var(--sl-color-gray-3, #94a3b8);
 		text-align: center;
+		line-height: 1.5;
+	}
+	.license a {
+		color: var(--sl-color-gray-2, #cbd5e1);
+		text-decoration: underline;
 	}
 </style>
